@@ -2,23 +2,16 @@ package by.epamtc.jwd.main;
 
 import static by.epamtc.jwd.util.Util.matrixToString;
 
-public class Task1 {
+public class Task2 {
     private static int[][] formMatrix(int n) {
-        if (n % 2 != 0)
+        if (n % 2 != 0) {
             return null;
+        }
 
         int[][] matrix = new int[n][n];
 
         for (int i = 0; i < n; i++) {
-            if (i % 2 == 0) {
-                for (int j = 0; j < n; j++) {
-                    matrix[i][j] = j + 1;
-                }
-            } else {
-                for (int j = n - 1; j >= 0; j--) {
-                    matrix[i][j] = n - j;
-                }
-            }
+            matrix[i][i] = (i + 1) * (i + 2);
         }
 
         return matrix;
@@ -30,5 +23,4 @@ public class Task1 {
         assert matrix != null;
         System.out.println(matrixToString(matrix));
     }
-
 }
