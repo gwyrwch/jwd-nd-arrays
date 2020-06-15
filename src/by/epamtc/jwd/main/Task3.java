@@ -22,7 +22,7 @@ public class Task3 {
     }
 
     public static void main(String[] args) {
-        int n = 4   ;
+        int n = 4;
         int[][] matrix = formMatrix(n);
 
         assert matrix != null;
