@@ -32,14 +32,15 @@ public class Task5 {
         int n = 3;
         int m = 4;
         int p = 2;
-        int[][] matrixA = getRandomMatrix(n, m);
+        int bound = 10;
+
+        int[][] matrixA = getRandomMatrix(n, m, bound);
         System.out.println(matrixToString(matrixA));
-        int[][] matrixB = getRandomMatrix(m, p);
+
+        int[][] matrixB = getRandomMatrix(m, p, bound);
         System.out.println(matrixToString(matrixB));
 
         int[][] mProduct = findMatrixProduct(matrixA, matrixB);
-
-
         System.out.println(matrixToString(mProduct));
     }
 }

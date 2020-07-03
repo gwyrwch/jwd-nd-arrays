@@ -1,7 +1,8 @@
 package by.epamtc.jwd.main;
 
-public class Task6 {
+import static java.lang.System.exit;
 
+public class Task6 {
     private static int[][] square;
     private static boolean[] used;
 
@@ -21,8 +22,9 @@ public class Task6 {
                 curSumCol += square[j][i];
             }
 
-            if (curSumCol != sum || curSumRow != sum)
+            if (curSumCol != sum || curSumRow != sum) {
                 return false;
+            }
         }
 
         return true;
@@ -30,8 +32,10 @@ public class Task6 {
 
     private static void printSquare(int[][] square) {
         for (int[] row : square) {
-            for (int k = 0; k < square.length; k++)
+            for (int k = 0; k < square.length; k++) {
                 System.out.print(row[k] + " ");
+            }
+
             System.out.println();
         }
 
@@ -42,13 +46,16 @@ public class Task6 {
         if (i == n * n) {
             if (isCorrect(square)) {
                 printSquare(square);
+                exit(0);
             }
+
             return;
         }
 
         for (int x = 1; x <= n * n; x++) {
-            if (used[x - 1])
+            if (used[x - 1]) {
                 continue;
+            }
 
             used[x - 1] = true;
             square[i / n][i % n] = x;
@@ -58,10 +65,10 @@ public class Task6 {
     }
 
     public static void main(String[] args) {
-        int n = 4;
+        int size = 3;
 
-        square = new int[n][n];
-        used = new boolean[n * n];
-        bruteForce(n, 0);
+        square = new int[size][size];
+        used = new boolean[size * size];
+        bruteForce(size, 0);
     }
 }

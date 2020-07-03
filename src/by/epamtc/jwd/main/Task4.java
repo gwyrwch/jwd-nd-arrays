@@ -22,7 +22,9 @@ public class Task4 {
     }
 
     public static void main(String[] args) {
-        int[] nums = getRandomIntArray(4);
+        int size = 4;
+
+        int[] nums = getRandomIntArray(size);
         int[][] matrix = formMatrix(nums);
 
         assert matrix != null;
